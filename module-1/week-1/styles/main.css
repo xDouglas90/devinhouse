@@ -5,8 +5,13 @@
 }
 
 body {
+    background: var(--background);
     margin: 0;
     padding: 0;
+}
+
+hr {
+    margin: 0;
 }
 
 :root {
@@ -45,23 +50,37 @@ body {
 }
 
 .main {
-    background: var(--background);
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 /* Index content */
 .main__parag {
   color: var(--black);
   font: normal 16px Verdana, sans-serif;
+  text-align: center;
 }
 
+.main__navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
-.main__forward-btn {
+.main__navigation-btn {
     background: url('../assets/forward-arrow.png') no-repeat center;
     background-size: contain;
     border: 2px solid var(--black);
     border-radius: 7px;
     margin-top: 20px;
     padding: 10px 30px;
+}
+
+.main__video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Images content */
