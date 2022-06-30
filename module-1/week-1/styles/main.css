@@ -1,0 +1,42 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --white: #fff;
+  --gradient-primary: rgb(252, 125, 38);
+  --gradient-linear: linear-gradient(
+    90deg,
+    rgba(252, 125, 38, 1) 0%,
+    rgba(234, 58, 114, 1) 28%,
+    rgba(160, 45, 157, 1) 62%,
+    rgba(46, 44, 206, 1) 96%
+  );
+  --text: #2b2b2b;
+  --background: #EEE;
+}
+
+.top-bar {
+  background: var(--gradient-primary);
+  background: var(--gradient-linear);
+}
+
+.top-bar__title {
+  color: var(--white);
+  font: bold 20px Verdana, sans-serif;
+  text-align: center;
+}
+
+.main {
+    background: var(--background);
+}
+
+.main__parag {
+  color: var(--text);
+  font: normal 16px Verdana, sans-serif;
+}
