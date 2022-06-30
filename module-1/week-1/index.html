@@ -16,35 +16,52 @@
     <!-- Firefox, Chrome, Safari, IE 11+ and Opera. -->
     <link rel="icon" href="./assets/favicons/index-196.ico">
 
-    <title>DEVinHouse</title>
+    <title>DEVinMiddleEarth</title>
 
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
     <header class="top-bar" role="banner">
-        <h1 class="top-bar__title" role="heading" aria-level="1">Semana 1</h1>
+        <div class="top-bar__content">
+            <h1 class="top-bar__title" role="heading" aria-level="1">DEVinMiddleEarth</h1>
+            
+            <a class="top-bar__logo" href="./index.html">
+                <img class="top-bar__logo-img" src="./assets/logo.png" alt="Logo do portal">
+            </a>
+            
+            <nav>
+                <ul class="top-bar__nav">
+                    <li class="top-bar__nav-item">
+                        <a href="./index.html" class="top-bar__nav-link">Home</a>
+                    </li>
+                    <li class="top-bar__nav-item">
+                        <a href="./images.html" class="top-bar__nav-link">Imagens</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <hr />
-
     <main role="main" class="main">
-        <section class="main__video" role="region">
-            <h2 class="main__video-title">
-                The Lord of the Rings & Hobbit Tribute || Time of Our Lives
-            </h2>
-            <p class="main__video-description">
-                Tributo de O Senhor dos Anéis e O Hobbit dedicado a todos os fans de J.R.R Tolkien.
-            </p>
+        <div class="container">
+            <section class="main__video" role="region">
+                <h2 class="main__video-title">
+                    The Lord of the Rings & Hobbit Tribute || Time of Our Lives
+                </h2>
+                <p class="main__video-description">
+                    Tributo de O Senhor dos Anéis e O Hobbit dedicado a todos os fans de J.R.R Tolkien.
+                </p>
 
-            <iframe class="main__video-content" width="560" height="315" src="https://www.youtube.com/embed/EYCR741ZYw8"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-        </section>
+                <iframe class="main__video-content" width="560" height="315"
+                    src="https://www.youtube.com/embed/EYCR741ZYw8" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </section>
 
-        <div class="main__navigation">
-            <a class="main__navigation-btn" href="./images.html"></a>
+            <div class="main__navigation">
+                <a class="main__navigation-btn" href="./images.html"></a>
+            </div>
         </div>
     </main>
 </body>

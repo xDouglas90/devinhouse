@@ -5,13 +5,13 @@
 }
 
 body {
-    background: var(--background);
-    margin: 0;
-    padding: 0;
+  background: var(--background);
+  margin: 0;
+  padding: 0;
 }
 
 hr {
-    margin: 0;
+  margin: 0;
 }
 
 :root {
@@ -26,32 +26,62 @@ hr {
     rgba(46, 44, 206, 1) 96%
   );
   --black: #2b2b2b;
-  --background: #EEE;
+  --background: #eee;
 
   /* Shadows */
   --shadow: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
 
+/* Header */
 .top-bar {
-    background: url('../assets/top-bar-cover.jpg') no-repeat;
-    background-size: cover;
-    background-position-y: -280px;
-    height: 15rem;
-    filter: var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: var(--black);
+  height: 10%;
+  filter: var(--shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.top-bar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .top-bar__title {
+  display: none;
+}
+
+.top-bar__logo-img {
+  width: 473px;
+}
+
+.top-bar__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  list-style: none;
+}
+
+.top-bar__nav-item {
+  font: bold 1.2rem Verdana, sans-serif;
+  font-weight: bold;
+}
+
+.top-bar__nav-link {
   color: var(--white);
-  font: bold 20px Verdana, sans-serif;
-  margin: 0;
+  text-decoration: none;
 }
 
 .main {
-    margin: 0 auto;
-    max-width: 1200px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 7%;
 }
 
 /* Index content */
@@ -62,42 +92,42 @@ hr {
 }
 
 .main__navigation {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .main__navigation-btn {
-    background: url('../assets/forward-arrow.png') no-repeat center;
-    background-size: contain;
-    border: 2px solid var(--black);
-    border-radius: 7px;
-    margin-top: 20px;
-    padding: 10px 30px;
+  background: url('../assets/forward-arrow.png') no-repeat center;
+  background-size: contain;
+  border: 2px solid var(--black);
+  border-radius: 7px;
+  margin-top: 20px;
+  padding: 10px 30px;
 }
 
 .main__video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* Images content */
 .gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .gallery__item {
-    max-height: 500px;
-    width: 30%;
-    filter: var(--shadow);
+  max-height: 500px;
+  width: 30%;
+  filter: var(--shadow);
 }
 .gallery__item-img {
-    border-radius: 7px;
-    height: 100%;
-    width: 100%;
+  border-radius: 7px;
+  height: 100%;
+  width: 100%;
 }
