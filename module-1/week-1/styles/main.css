@@ -2,12 +2,12 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background: var(--background);
-  margin: 0;
-  padding: 0;
 }
 
 hr {
@@ -60,22 +60,41 @@ hr {
   width: 473px;
 }
 
+.top-bar__content nav {
+  height: 100%;
+}
+
 .top-bar__nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
   list-style: none;
+  height: 100%;
 }
 
 .top-bar__nav-item {
   font: bold 1.2rem Verdana, sans-serif;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 8rem;
+  transition: background-color 300ms ease-in-out;
+}
+
+.top-bar__nav-item:hover {
+  background: var(--gradient-primary);
 }
 
 .top-bar__nav-link {
   color: var(--white);
   text-decoration: none;
+  transition: transform 300ms ease-in-out;
+}
+
+.top-bar__nav-link:hover {
+    transform: scale(1.05);
 }
 
 .main {
