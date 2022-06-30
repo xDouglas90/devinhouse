@@ -14,7 +14,7 @@ Este repositório tem como intuito armazenar os exercícios propostos no curso D
 ## Índice
 
  #### Módulo 1 
- <!-- - [Semana 1](https://) -->
+  - [Semana 1](module-1/week-1/M1-W1.md)
  <!-- - [Semana 2](https://) -->
  <!-- - [Semana 3](https://) -->
  <!-- - [Semana 4](https://) -->
