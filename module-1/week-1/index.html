@@ -25,17 +25,17 @@
     <header class="top-bar" role="banner">
         <div class="top-bar__content">
             <h1 class="top-bar__title" role="heading" aria-level="1">DEVinMiddleEarth</h1>
-            
-            <a class="top-bar__logo" href="./index.html">
+
+            <a class="top-bar__logo" href="./index.html" role="link">
                 <img class="top-bar__logo-img" src="./assets/logo.png" alt="Logo do portal">
             </a>
-            
-            <nav>
-                <ul class="top-bar__nav">
-                    <li class="top-bar__nav-item">
+
+            <nav role="navigation">
+                <ul class="top-bar__nav" role="menu">
+                    <li class="top-bar__nav-item" role="menuitem">
                         <a href="./index.html" class="top-bar__nav-link">Home</a>
                     </li>
-                    <li class="top-bar__nav-item">
+                    <li class="top-bar__nav-item" role="menuitem">
                         <a href="./images.html" class="top-bar__nav-link">Imagens</a>
                     </li>
                 </ul>
@@ -64,6 +64,37 @@
             </div>
         </div>
     </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer__content">
+            <div class="footer__about">
+                <p>Olá, eu sou o dev <strong>Douglas Oliveira</strong>!</p>
+                <p>
+                    Sou gaúcho de Porto Alegre e trabalho na área 10 meses. Atualmente sou Desenvolvedor Web Jr.
+                </p>
+                <p>
+                    Ao lado tem os links das minhas redes sociais, sinta-se a vontade para contatar-me.
+                </p>
+            </div>
+
+            <div class="footer__networking">
+                <a class="footer__networking-link" href="http://linkedin.com/in/odouglas-oliveira" target="_blank"
+                    rel="noopener noreferrer" role="link">
+                    <img src="./assets/linkedin-black-logo.png" alt="Logo da rede social Linkedin na cor preta"
+                        role="img" />
+                </a>
+                <a class="footer__networking-link" href="http://github.com/xdouglas90" target="_blank"
+                    rel="noopener noreferrer" role="link">
+                    <img src="./assets/github-black-logo.png" alt="Logo da rede Github na cor preta" role="img" />
+                </a>
+                <a class="footer__networking-link" href="http://instagram.com;xdouglas90" target="_blank"
+                    rel="noopener noreferrer" role="link">
+                    <img src="./assets/instagram-black-logo.png" alt="Logo da rede social Instagram na cor preta"
+                        role="img" />
+                </a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
