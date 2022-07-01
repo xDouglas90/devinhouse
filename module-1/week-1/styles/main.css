@@ -143,8 +143,8 @@ a {
 .gallery {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 40px;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .gallery__item {
@@ -152,10 +152,16 @@ a {
   width: 30%;
   filter: var(--shadow);
 }
+
 .gallery__item-img {
   border-radius: 7px;
   height: 100%;
   width: 100%;
+}
+
+.gallery__item-legend {
+  font-size: 17px;
+  text-align: center;
 }
 
 /* Footer */
