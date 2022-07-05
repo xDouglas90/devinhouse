@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- For IE 9 and below -->
     <!--[if IE]><link rel="shortcut icon" href="./assets/favicons/index-32.ico"><![endif]-->
     <link rel="icon" href="./assets/favicons/index-32.ico">
@@ -14,12 +15,41 @@
 
     <!-- Firefox, Chrome, Safari, IE 11+ and Opera. -->
     <link rel="icon" href="./assets/favicons/index-196.ico">
-    
-    <title>Document</title>
+
+    <title>Evento Alegre</title>
 
     <link rel="stylesheet" href="index.css">
+    <script src="main.js" defer></script>
 </head>
+
 <body>
-    
+    <header>
+        <section class="u-container u-flex u-flex-center u-flex-column topbar">
+            <figure class="topbar__logo" role="figure">
+                <img class="topbar__logo-img" src="./assets/logo.png" role="img" title="Evento Alegre - Diversão em Porto Alegre"
+                    alt="Logotipo contendo o nome Evento Alegre em dois tons de azuis e o subtítulo Diversão em Porto Alegre e uns detalhes imitando brilhos, ambos na cor preta">
+            </figure>
+            <nav class="u-flex u-flex-center u-flex-column topbar__navbar" role="menu">
+                <button class="topbar__navbar-button" onclick="handleToggle()" aria-haspopup="true"
+                    aria-controls="menu">
+                    <img class="topbar__navbar-button-img" src="./assets/menu-mobile-icon.png"
+                        alt="Ícone de menu mobile">
+                </button>
+                <ul class="u-flex u-flex-center u-flex-column topbar__navbar-list" role="menu" aria-labelledby="menubutton">
+                    <li class="topbar__navbar-item" ole="presentation">
+                        <a class="topbar__navbar-link" href="#events-list" role="menuitem">Eventos</a>
+                    </li>
+                    <li class="topbar__navbar-item" ole="presentation">
+                        <a class="topbar__navbar-link" href="#about" role="menuitem">Sobre</a>
+                    </li>
+                    <li class="topbar__navbar-item" ole="presentation">
+                        <a class="topbar__navbar-link" href="#contact" role="menuitem">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
 </body>
+
 </html>
