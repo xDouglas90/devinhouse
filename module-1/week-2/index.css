@@ -6,46 +6,46 @@
 */
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url("./assets/fonts/Roboto/Roboto-Thin.ttf") format("truetype");
-    font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+  font-weight: 100;
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url("./assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
-    font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/Roboto/Roboto-Light.ttf') format('truetype');
+  font-weight: 300;
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
-    font-weight: 100;
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: 100;
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url("./assets/fonts/Roboto/Roboto-Medium.ttf") format("truetype");
-    font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-weight: 600;
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url("./assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
-    font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url("./assets/fonts/Roboto-Black.ttf") format("truetype");
-    font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/Roboto-Black.ttf') format('truetype');
+  font-weight: 900;
 }
 
 :root {
-    --primary-color: #1565c0;
-    --secondary-color: #2196f3;
-    --white-color: #ffffff;
-    --black-color: #414040;
+  --primary-color: #1565c0;
+  --secondary-color: #2196f3;
+  --white-color: #ffffff;
+  --black-color: #414040;
 }
 
 /* RESET CSS */
@@ -171,8 +171,8 @@ q:after {
 }
 
 html {
-    -webkit-smoothing: antialiased;
-    font-family: 'Roboto', sans-serif;
+  -webkit-smoothing: antialiased;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* UTILITY */
@@ -198,6 +198,7 @@ html {
   flex-direction: column;
 }
 
+/* HEADER */
 .topbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
@@ -233,7 +234,7 @@ html {
 
 .topbar__navbar-button-img:hover {
   -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
-          filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 .topbar__navbar-list {
@@ -265,6 +266,80 @@ html {
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+/* MAIN */
+.banner {
+  background: url('./assets/images/eventim-luisa-sonza-baile-da-braba-574x280.jpg')
+    no-repeat center center;
+  background-size: cover;
+  height: 0;
+  padding-top: 77%;
+  width: 100%;
+}
+
+.banner__content {
+  position: relative;
+  bottom: 99px;
+  background: white;
+  gap: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 7px;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  -webkit-filter: drop-shadow(0px 0px 4px var(--black-color));
+  filter: drop-shadow(0px 0px 4px var(--black-color));
+}
+
+.banner__title {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.banner__title-highlight,
+.banner__description-em {
+  font-weight: bold;
+}
+
+.banner__description-em {
+  color: var(--black-color);
+}
+
+.banner__cta {
+  background: var(--primary-color);
+  border-radius: 7px;
+  color: var(--white-color);
+  filter: drop-shadow(0px 0px 2px var(--black-color));
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.banner__cta:hover {
+  background: var(--secondary-color);
+}
+
+@media (min-width: 576px) {
+  .banner__content {
+    bottom: 150px;
+    left: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .banner {
+    background: url('./assets/images/eventim-luisa-sonza-baile-da-braba-1240x480.jpg')
+      no-repeat center center;
+    background-size: cover;
+    padding-top: 38%;
+  }
+
+  .banner__content {
+    bottom: 113px;
+    left: 15rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -329,11 +404,21 @@ html {
   .topbar__navbar-link {
     color: var(--black-color);
   }
+
+  .banner__content {
+    bottom: 132px;
+    left: 23rem;
+  }
 }
 
 @media (min-width: 1200px) {
   .u-container {
     max-width: 1140px;
+  }
+
+  .banner__content {
+    bottom: 147px;
+    left: 30rem;
   }
 }
 
@@ -341,11 +426,24 @@ html {
   .u-container {
     max-width: 1320px;
   }
-}
 
-@media (min-width: 1680px) {
-  .u-container {
-    max-width: 1560px;
+  .banner__content {
+    bottom: 194px;
+    left: 33rem;
+    gap: 15px;
+    padding: 1rem;
+  }
+
+  .banner__title {
+    font-size: 1.5rem;
+  }
+
+  .banner__description {
+    font-size: 1.2rem;
+  }
+
+  .banner__cta {
+    font-size: 1.2rem;
   }
 }
 
@@ -356,5 +454,11 @@ html {
 
   .topbar__navbar-item {
     width: 17%;
+  }
+
+  .banner__content {
+    bottom: 231px;
+    left: 48rem;
+    padding: 2rem;
   }
 }
