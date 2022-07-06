@@ -18,11 +18,14 @@
 
     <title>Evento Alegre</title>
 
+    <!-- GLider.js min.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+
     <link rel="stylesheet" href="index.css">
-    <script src="main.js" defer></script>
 </head>
 
 <body>
+    <!-- Topbar begins -->
     <header>
         <section class="u-container u-flex u-flex-center u-flex-column topbar">
             <figure class="topbar__logo" role="figure">
@@ -30,6 +33,7 @@
                     title="Evento Alegre - Diversão em Porto Alegre"
                     alt="Logotipo contendo o nome Evento Alegre em dois tons de azuis e o subtítulo Diversão em Porto Alegre e uns detalhes imitando brilhos, ambos na cor preta">
             </figure>
+            <!-- Navigation menu begins -->
             <nav class="u-flex u-flex-center u-flex-column topbar__navbar" role="menu">
                 <button class="topbar__navbar-button" onclick="handleToggle()" aria-haspopup="true"
                     aria-controls="menu">
@@ -51,21 +55,187 @@
             </nav>
         </section>
     </header>
+    <!-- Topbar ends -->
 
     <main>
+        <!-- Featured event -->
         <section class="banner" role="banner">
             <div class="u-flex u-flex-column u-flex-center banner__content">
-                <h2 class="banner__title"><strong class="banner__title-highlight" role="heading" aria-level="2">LUÍSA SONZA</strong> NO <strong
-                        class="banner__title-highlight">PEPSI ON STAGE</strong></h2>
+                <h2 class="banner__title"><strong class="banner__title-highlight" role="heading" aria-level="2">LUÍSA
+                        SONZA</strong> NO <strong class="banner__title-highlight">PEPSI ON STAGE</strong></h2>
                 <p class="banner__description"><em class="banner__description-em">Data:</em> <time class="banner__date"
                         datetime="2022-07-16 22:00">16/07/2022 às
                         22h</time></p>
                 <p class="banner__description"><em class="banner__description-em">Classificação:</em> 18 anos</p>
-                <a class="banner__cta" href="https://bileto.sympla.com.br/event/72320/d/131976" role="link">Ingressos</a>
+                <a class="banner__cta" href="https://bileto.sympla.com.br/event/72320/d/131976"
+                    role="link">Ingressos</a>
             </div>
         </section>
+
+        <!-- Events list slider -->
+        <article id="events-list" class="events">
+            <section class="glider-container">
+                <h2 class="events__title" role="heading" aria-level="2">Próximos Eventos</h2>
+                <button aria-label="Previous" class="glider-prev">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </button>
+                <div class="glider">
+                    <!-- First event item -->
+                    <div class="u-flex u-flex-column u-flex-center events__item">
+                        <div class="events__item-info">
+                            <div class="events__item-image events__item-image--1">
+                            </div>
+                            <h3 class="events__item-title" role="heading" aria-level="3"><span
+                                    class="events__item-title-span">CRIOLO NO ARAÚJO VIANNA</span></h3>
+                            <p class="events__item-description">
+                                Kleber Cavalcante Gomes (São Paulo, 5 de setembro de 1975), mais conhecido sob o nome
+                                artístico
+                                de Criolo ou, anteriormente, Criolo Doido, é um cantor, rapper, compositor e ator
+                                brasileiro, um
+                                dos idealizadores da Rinha dos MCs e indicado ao Grammy Latino de 2019.
+                                <span class="events__item-span"><em class="events__item-span-em">Data:</em> <time
+                                        class="events__item-date" datetime="2022-07-16 22:00">16/07/2022 às
+                                        22h</time></span>
+                            </p>
+                        </div>
+                        <div class="u-flex u-flex-column u-flex-center events__item-link">
+                            <a class="events__item-cta" href="https://passelivre.click/events/criolo-no-araujo-vianna/"
+                                role="link" target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Second event item -->
+                    <div class="u-flex u-flex-column u-flex-center events__item">
+                        <div class="events__item-info">
+                            <div class="events__item-image events__item-image--2">
+                            </div>
+                            <h3 class="events__item-title" role="heading" aria-level="3"><span
+                                    class="events__item-title-span">THE WAILERS NO ARAÚJO VIANA</span></h3>
+                            <p class="events__item-description">
+                                The Wailers é uma banda jamaicana de reggae criada em 1962 por Bob Marley, Peter Tosh,
+                                Bunny Wailer, Beverley Kelso, Cherry Smith e Junior Braithwaite com o nome de Wailing
+                                Wailers. Começaram tocando ska e outros ritmos jamaicanos como rocksteady.
+                                <span class="events__item-span"><em class="events__item-span-em">Data:</em> <time
+                                        class="events__item-date" datetime="2022-08-18 21:00">18/08/2022 às
+                                        21h</time></span>
+                            </p>
+                        </div>
+                        <div class="u-flex u-flex-column u-flex-center events__item-link">
+                            <a class="events__item-cta"
+                                href="https://passelivre.click/events/the-wailers-no-araujo-vianna/" role="link"
+                                target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Third event item -->
+                    <div class="u-flex u-flex-column u-flex-center events__item">
+                        <div class="events__item-info">
+                            <div class="events__item-image events__item-image--3">
+                            </div>
+                            <h3 class="events__item-title" role="heading" aria-level="3"><span
+                                    class="events__item-title-span">MARISA MONTE NO ARAÚJO V.</span></h3>
+                            <p class="events__item-description">
+                                Marisa já vendeu mais de 10 milhões de álbuns e ganhou inúmeros prêmios nacionais e
+                                internacionais, incluindo quatro Grammy Latino, sete Video Music Brasil, nove Prêmio
+                                Multishow de Música Brasileira, cinco APCA e seis Prêmio TIM de Música. 
+                                <span class="events__item-span"><em class="events__item-span-em">Data:</em> <time
+                                        class="events__item-date" datetime="2022-09-17 22:00">17/09/2022 às
+                                        21h</time></span>
+                            </p>
+                        </div>
+                        <div class="u-flex u-flex-column u-flex-center events__item-link">
+                            <a class="events__item-cta"
+                                href="https://passelivre.click/events/marisa-monte-no-araujo-vianna/" role="link"
+                                target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Fourth event item -->
+                    <div class="u-flex u-flex-column u-flex-center events__item">
+                        <div class="events__item-info">
+                            <div class="events__item-image events__item-image--4">
+                            </div>
+                            <h3 class="events__item-title" role="heading" aria-level="3"><span
+                                    class="events__item-title-span">GUNS N' ROSES NA ARENA</span></h3>
+                            <p class="events__item-description">
+                                Pode começar a comemorar e ir separando o seu jeans mais rasgado, a bandana e ir
+                                treinando o assobio de “Patience”, Guns N’ Roses Are F’ N’ Back! A Mercury Concerts
+                                acaba de confirmar 13 shows da banda mais “perigosa” do planeta na América do Sul, oito
+                                deles no Brasil.
+                                <span class="events__item-span"><em class="events__item-span-em">Data:</em> <time
+                                        class="events__item-date" datetime="2022-09-26 22:00">26/09/2022 às
+                                        21h</time></span>
+                            </p>
+                        </div>
+                        <div class="u-flex u-flex-column u-flex-center events__item-link">
+                            <a class="events__item-cta"
+                                href="https://passelivre.click/events/guns-n-rose-na-arena-do-gremio/" role="link"
+                                target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Fifth event item -->
+                    <div class="u-flex u-flex-column u-flex-center events__item">
+                        <div class="events__item-info">
+                            <div class="events__item-image events__item-image--5">
+                            </div>
+                            <h3 class="events__item-title" role="heading" aria-level="3"><span
+                                    class="events__item-title-span">HANSON NO BOURBON COUNTRY</span></h3>
+                            <p class="events__item-description">
+                                Hanson é uma banda norte-americana de pop rock, formada por três irmãos. Ficou
+                                internacionalmente conhecida sobretudo pelo hit “MMMBop“, de 1997. Já venderam mais de
+                                15 milhões de cópias no mundo inteiro.
+                                <span class="events__item-span"><em class="events__item-span-em">Data:</em> <time
+                                        class="events__item-date" datetime="2022-10-11 22:00">11/10/2022 às
+                                        21h</time></span>
+                            </p>
+                        </div>
+                        <div class="u-flex u-flex-column u-flex-center events__item-link">
+                            <a class="events__item-cta"
+                                href="https://passelivre.click/events/hanson-no-bourbon-country/" role="link"
+                                target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Sixth event item -->
+                    <div class="u-flex u-flex-column u-flex-center events__item">
+                        <div class="events__item-info">
+                            <div class="events__item-image events__item-image--6">
+                            </div>
+                            <h3 class="events__item-title" role="heading" aria-level="3"><span
+                                    class="events__item-title-span">BONNIE TYLER NO ARAÚJO V.
+                                </span></h3>
+                            <p class="events__item-description">
+                                Bonnie Tyler (nome artístico de Gaynor Hopkins – Skewen, Neath Port Talbot, 8 de junho
+                                de 1951) é uma cantora galesaque ficou famosa com as músicas “Total Eclipse of the
+                                Heart“, “It’s a Heartache“, “Making Love”, “Holding Out For a Hero” e “Lost in France”.
+                                <span class="events__item-span"><em class="events__item-span-em">Data:</em> <time
+                                        class="events__item-date" datetime="2022-11-18 22:00">18/11/2022 às
+                                        21h</time></span>
+                            </p>
+                        </div>
+                        <div class="u-flex u-flex-column u-flex-center events__item-link">
+                            <a class="events__item-cta"
+                                href="https://passelivre.click/events/bonnie-tyler-no-araujo-vianna/" role="link"
+                                target="_blank" rel="noopener noreferrer">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <button aria-label="Next" class="glider-next">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </button>
+                <div role="tablist" class="dots"></div>
+            </section>
+        </article>
     </main>
 
+
+    <!-- Glider.js -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/d275f52188.js" crossorigin="anonymous"></script>
+    <!-- Main JS -->
+    <script src="main.js"></script>
 </body>
 
 </html>

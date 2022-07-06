@@ -176,6 +176,11 @@ html {
 }
 
 /* UTILITY */
+.u-container {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 .u-flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -321,10 +326,148 @@ html {
   background: var(--secondary-color);
 }
 
+.events {
+  padding-top: 3rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.events__title {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.glider-container {
+  margin-left: 10%;
+  position: relative;
+  width: 80%;
+}
+
+.glider-prev, .glider-next {
+  color: var(--secondary-color);
+  top: 47%;
+}
+
+.events__item {
+  height: auto;
+  border-radius: 3px;
+  background-color: var(--white-color);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  max-width: 350px;
+  padding-bottom: 0;
+}
+
+.events__item-info {
+  height: auto;
+  position: relative;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.events__item-link {
+  background-color: var(--secondary-color);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-clip-path: polygon(0 59%, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 59%, 100% 0, 100% 100%, 0 100%);
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+.events__item-cta {
+  color: var(--white-color);
+  position: relative;
+  top: 45px;
+  margin: 0 auto;
+  transform: translate(0);
+  text-decoration: none;
+}
+
+.events__item-image {
+  background-size: cover;
+  height: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  padding-top: 52%;
+}
+
+.events__item-image--1 {
+  background-image: url('./assets/images/event-1.png');
+}
+
+.events__item-image--2 {
+  background-image: url('./assets/images/event-2.png');
+}
+
+.events__item-image--3 {
+  background-image: url('./assets/images/event-3.jpg');
+}
+
+.events__item-image--4 {
+  background-image: url('./assets/images/event-4.png');
+}
+
+.events__item-image--5 {
+  background-image: url('./assets/images/event-5.jpg');
+}
+
+.events__item-image--6 {
+  background-image: url('./assets/images/event-6.jpg');
+}
+
+.events__item-title {
+  color: var(--white-color);
+  font-size: 2rem;
+  font-weight: 300;
+  position: absolute;
+  right: 2rem;
+  top: 7rem;
+  text-align: right;
+  text-transform: uppercase;
+  width: 75%;
+}
+
+.events__item-title:nth-child(3) {
+  top: 5rem;
+}
+
+.events__item-title-span {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(21, 101, 192, 0.85),
+    rgba(33, 147, 246, 0.85)
+  );
+}
+
+.events__item-description {
+  color: var(--black-color);
+  padding: 4rem 1rem 0px;
+  text-align: justify;
+}
+
+.events__item-span {
+  display: block;
+  margin: 1rem 0;
+}
+
+.events__item-span-em {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
 @media (min-width: 576px) {
   .banner__content {
     bottom: 150px;
     left: 3rem;
+  }
+
+  .glider-container {
+    margin-left: 20%;
+    width: 60%;
   }
 }
 
@@ -340,12 +483,29 @@ html {
     bottom: 113px;
     left: 15rem;
   }
+
+  .glider-container {
+    margin-left: 3.3%;
+    width: 93%;
+  }
+
+  .events__item {
+    max-width: 340px;
+  }
+
+  .events__item:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .glider-container {
+    margin-left: 4%;
+    width: 92%;
+  }
 }
 
 @media (min-width: 992px) {
   .u-container {
     max-width: 960px;
-    margin: 0 auto;
   }
 
   .topbar {
@@ -409,6 +569,23 @@ html {
     bottom: 132px;
     left: 23rem;
   }
+
+  .events {
+    flex-direction: row;
+  }
+
+  .glider-container {
+    margin-left: 15%;
+    width: 72%;
+  }
+
+  .events__item {
+    flex: 1;
+    max-width: 350px;
+  }
+  .events__item:first-child {
+    margin-left: 0.5rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -420,11 +597,16 @@ html {
     bottom: 147px;
     left: 30rem;
   }
+
+  .glider-container {
+    margin-left: 5%;
+    width: 91.5%;
+  }
 }
 
 @media (min-width: 1440px) {
   .u-container {
-    max-width: 1320px;
+    max-width: 1150px;
   }
 
   .banner__content {
@@ -445,11 +627,16 @@ html {
   .banner__cta {
     font-size: 1.2rem;
   }
+
+  .glider-container {
+    margin-left: 13%;
+    width: 76.2%;
+  }
 }
 
 @media (min-width: 1920px) {
   .u-container {
-    max-width: 1760px;
+    max-width: 1258px;
   }
 
   .topbar__navbar-item {
@@ -460,5 +647,10 @@ html {
     bottom: 231px;
     left: 48rem;
     padding: 2rem;
+  }
+
+  .glider-container {
+    margin-left: 20%;
+    width: 57.5%;
   }
 }
