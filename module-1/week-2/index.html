@@ -230,9 +230,9 @@
 
         <!-- Contact form section begins -->
         <section class="u-container u-flex u-flex-center u-flex-column contact">
-            <h3 class="contact__title">Entre em contato</h3>
+            <h3 class="contact__title" role="heading" aria-level="3">Entre em contato</h3>
             <div class="contact__form">
-                <form action="" class="form">
+                <form action="" class="form" aria-label="Entre em contato">
                     <div class="form__group">
                         <input type="text" name="name" id="name" class="form__input" placeholder="Nome" required>
                         <label for="name" class="form__label">Nome</label>
@@ -252,6 +252,67 @@
                 </form>
             </div>
         </section>
+
+        <!-- Footer section begins -->
+        <footer>
+            <div class="u-flex u-flex-column u-flex-center footer-container">
+                <div class="footer-content">
+                    <div class="u-flex u-flex-column u-flex-center footer-content__about">
+                        <figure>
+                            <img class="footer-content__about-img" src="./assets/logo.png" role="img"
+                                title="Evento Alegre - Diversão em Porto Alegre"
+                                alt="Logotipo contendo o nome Evento Alegre em dois tons de azuis e o subtítulo Diversão em Porto Alegre e uns detalhes imitando brilhos, ambos na cor preta">
+                        </figure>
+                        <p class="footer-content__about-text">
+                            Evento Alegre é um portal fictício de informações de eventos que irão ocorrer na cidade de
+                            Porto Alegre/RS. Este projeto foi feito com intuito de estudos em HTML5 e CSS3 pelo curso
+                            DEVinHouse, promovido pelo SESI-SENAI em parceria com a empresa Intelbras.
+                        </p>
+                    </div>
+                    <div class="u-flex u-flex-column u-flex-center footer-content__contacts">
+                        <strong class="contacts__title">Contate-me:</strong>
+                        <div class="u-flex u-flex-center contacts__midias">
+                            <a class="contacts__midias-icon" href="https://linkedin.com/in/odouglas-oliveira"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-linkedin-in" title="Linkedin"></i>
+                            </a>
+                            <a class="contacts__midias-icon" href="http://github.com/xdouglas90" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-github" title="GitHub"></i>
+                            </a>
+                            <a class="contacts__midias-icon" href="mailto:odouglas.dev@gmail.com">
+                                <i class="fa-solid fa-at" title="Gmail"></i>
+                            </a>
+                            <a class="contacts__midias-icon" href="https://t.me/odouglasdev" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-telegram" title="Telegram"></i>
+                            </a>
+                            <a class="contacts__midias-icon" href="https://api.whatsapp.com/send?phone=5551986150326"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-whatsapp" title="WhatsApp"></i>
+                            </a>
+                            <a class="contacts__midias-icon" href="https://instagram.com/xdouglas90" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram" title="Instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-flex u-flex-column u-flex-center footer-copyright">
+                    <p class="footer-copyright__text">© Copyright 2022 Evento Alegre - Todos os direitos reservados. |
+                        Administrado por Douglas
+                        Oliveira.</p>
+                    <div class="u-flex u-flex-center footer-copyright__partners">
+                        <figure>
+                            <img class="partners__logo-1" src="./assets/images/SESI-SENAI.png" alt="">
+                        </figure>
+                        <figure>
+                            <img class="partners__logo-2" src="./assets/images/intelbraslogo.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </main>
 
 
