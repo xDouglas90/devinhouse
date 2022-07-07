@@ -45,3 +45,81 @@ window.addEventListener('load', function () {
     ],
   });
 });
+
+// Custom Toast
+const Toast = {
+  init() {
+    this.hideTimeout = null;
+
+    this.el = document.createElement('div');
+    this.el.classList.add('toast__alert');
+
+    const toastContainer = document.querySelector('.toast');
+
+    toastContainer.appendChild(this.el);
+  },
+  show(message, state) {
+    clearTimeout(this.hideTimeout);
+
+    this.el.innerHTML = message;
+    this.el.classList.add('toast__alert--visible');
+
+    if (state) {
+      this.el.classList.remove('toast__alert--error');
+      this.el.classList.add('toast__alert--success');
+    }
+
+    if (!state) {
+      this.el.classList.add('toast__alert--error');
+    }
+
+    this.hideTimeout = setTimeout(() => {
+      this.el.classList.remove('toast__alert--visible');
+    }, 3000);
+  },
+};
+
+document.addEventListener('DOMContentLoaded', () => Toast.init());
+
+const toastContent = {
+  success: `
+  <i class="fa-solid fa-circle-check"></i>
+  <p class="toast__text">
+      Mensagem enviada com
+      sucesso!
+  </p>
+  `,
+  error: `<i class="fa-solid fa-circle-exclamation"></i>
+  <p class="toast__text">
+      Ops! <br> parece que você esqueceu de preencher algum campo!
+  </p>
+  `,
+};
+
+// Form
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Handle form data
+  const formData = new FormData(form);
+  const data = {};
+
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
+  let response = `
+  Formulário de contato => Nome: ${data.name} - E-mail: ${data.email} - Descriçao: ${data.description}
+  `;
+  console.log(response);
+
+  if (data.name && data.email && data.description) {
+    Toast.show(toastContent.success, true);
+  }
+
+  if (!data.name || !data.email || !data.description) {
+    Toast.show(toastContent.error, false);
+  }
+});

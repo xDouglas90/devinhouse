@@ -234,17 +234,17 @@
             <div class="contact__form">
                 <form action="" class="form" aria-label="Entre em contato">
                     <div class="form__group">
-                        <input type="text" name="name" id="name" class="form__input" placeholder="Nome" required>
+                        <input type="text" name="name" id="name" class="form__input" placeholder="Nome">
                         <label for="name" class="form__label">Nome</label>
                     </div>
                     <div class="form__group">
-                        <input type="email" name="email" id="email" class="form__input" placeholder="Email" required>
+                        <input type="email" name="email" id="email" class="form__input" placeholder="Email">
                         <label for="email" class="form__label">Email</label>
                     </div>
                     <div class="form__group">
-                        <textarea name="message" id="message" class="form__input" placeholder="Mensagem"
-                            required></textarea>
-                        <label for="message" class="form__label">Mensagem</label>
+                        <textarea name="description" id="description" class="form__input"
+                            placeholder="Mensagem"></textarea>
+                        <label for="description" class="form__label">Descrição</label>
                     </div>
                     <div class="form__group">
                         <button type="submit" class="form__submit">Enviar</button>
@@ -252,6 +252,9 @@
                 </form>
             </div>
         </section>
+
+        <!-- Toast message -->
+        <div class="toast"></div>
 
         <!-- Footer section begins -->
         <footer>

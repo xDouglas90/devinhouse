@@ -39,6 +39,8 @@
   --secondary-color: #2196f3;
   --white-color: #ffffff;
   --black-color: #414040;
+  --success-color: #4caf50;
+  --error-color: #f44336; 
 }
 
 /* RESET CSS */
@@ -580,6 +582,49 @@ html {
 .form__submit:hover {
   background: var(--primary-color);
   color: var(--white-color);
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 300px;
+}
+
+.toast__alert {
+  border-radius: 5px;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  color: var(--white-color);
+  padding: 0.7rem;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.toast__alert--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.fa-circle-check, .fa-circle-exclamation {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.toast__alert--success {
+  background-color: var(--success-color);
+}
+
+.toast__alert--error {
+  background-color: var(--error-color);
 }
 
 /* FOOTER */
