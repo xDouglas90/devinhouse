@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Years Difference</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .result-table {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-collapse: collapse;
+            margin: 0 auto;
+            width: 50%;
+        }
+
+        .result-table td {
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            height: 1rem;
+            padding: 10px;
+        }
+
+        .result-table th {
+            background-color: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .refresh-btn {
+            background-color: rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 2rem;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .refresh-btn:hover {
+            background-color: rgba(16, 20, 255, 0.4);
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Diferença entre Anos</h1>
+    </header>
+
+    <main>
+        <article>
+            <strong>Resultado</strong>
+
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Ano</th>
+                        <th>Diferença</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="user-year"></td>
+                        <td class="result"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button class="refresh-btn" onclick="refresh()">Novo cálculo</button>
+        </article>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
