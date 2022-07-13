@@ -69,8 +69,17 @@ const createItemElement = (content) => {
 // Add lists to DOM
 const addToDOM = (list, parent) => {
   list.forEach((guest) => {
-    const li = createItemElement(`${guest.nome} ${guest.sobrenome}`);
-    parent.appendChild(li);
+    if (guest.openBar) {
+      const guestWithOpenBar = createItemElement(
+        `${guest.nome} ${guest.sobrenome} 🍹`
+      );
+      parent.appendChild(guestWithOpenBar);
+    } else {
+      const guestWithoutOpenBar = createItemElement(
+        `${guest.nome} ${guest.sobrenome} 🚫`
+      );
+      parent.appendChild(guestWithoutOpenBar);
+    }
   });
 };
 
