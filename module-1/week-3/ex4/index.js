@@ -1,57 +1,40 @@
-const guestOne = {
-  nome: 'Douglas',
-  sobrenome: 'Oliveira',
-  setor: 'Camarote',
-  idade: 32,
+// Factory function to create guests objects
+const createGuest = (name, lastName, sector, age) => {
+  return {
+    nome: name,
+    sobrenome: lastName,
+    setor: sector,
+    idade: age,
+  };
 };
 
-const guestTwo = {
-  nome: 'Ana',
-  sobrenome: 'Freire',
-  setor: 'Camarote',
-  idade: 25,
-};
+// Create guests objects
+const guestOne = createGuest('Douglas', 'Oliveira', 'Camarote', 32);
+const guestTwo = createGuest('Ana', 'Freire', 'Camarote', 25);
+const guestThree = createGuest('Júlia', 'Santos', 'Arquibancada', 10);
+const guestFour = createGuest('Monique', 'Oliveira', 'Pista', 25);
+const guestFive = createGuest('Monise', 'Oliveira', 'Pista', 22);
+const guestSix = createGuest('Miquéias', 'Souza', 'Arquibancada', 11);
 
-const guestThree = {
-  nome: 'Júlia',
-  sobrenome: 'Santos',
-  setor: 'Arquibancada',
-  idade: 10,
-};
-
-const guestFour = {
-  nome: 'Monique',
-  sobrenome: 'Oliveira',
-  setor: 'Pista',
-  idade: 25,
-};
-
-const guestFive = {
-  nome: 'Monise',
-  sobrenome: 'Oliveira',
-  setor: 'Pista',
-  idade: 22,
-};
-
-const guestSix = {
-  nome: 'Miquéias',
-  sobrenome: 'Souza',
-  setor: 'Arquibancada',
-  idade: 11,
-};
-
+// Create guest list
 const lista = [guestOne, guestTwo, guestThree, guestFour, guestFive, guestSix];
 
+// Function to check if a guest is older than 18 years old and add to new list
+const isOlder = (list, processedList) => {
+  list.map((guest) => {
+    if (guest.idade >= 18) {
+      processedList.push({ ...guest, openBar: true });
+    } else {
+      processedList.push({ ...guest, openBar: false });
+    }
+  });
+};
+
+// Function to return processed list
 const liberarBebidas = (lista) => {
   const listaProcessada = [];
 
-  lista.map((guest) => {
-    if (guest.idade >= 18) {
-      listaProcessada.push({ ...guest, openBar: true });
-    } else {
-      listaProcessada.push({ ...guest, openBar: false });
-    }
-  });
+  isOlder(lista, listaProcessada);
 
   return listaProcessada;
 };
