@@ -41,3 +41,20 @@ const guestSix = {
 };
 
 const lista = [guestOne, guestTwo, guestThree, guestFour, guestFive, guestSix];
+
+const liberarBebidas = (lista) => {
+  const listaProcessada = [];
+
+  lista.map((guest) => {
+    if (guest.idade >= 18) {
+      listaProcessada.push({ ...guest, openBar: true });
+    } else {
+      listaProcessada.push({ ...guest, openBar: false });
+    }
+  });
+
+  return listaProcessada;
+};
+
+const listaComBebidasProcessadas = liberarBebidas(lista);
+console.log(listaComBebidasProcessadas);
