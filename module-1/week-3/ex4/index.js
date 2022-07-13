@@ -17,11 +17,18 @@ const guestFive = createGuest('Monise', 'Oliveira', 'Pista', 22);
 const guestSix = createGuest('Miquéias', 'Souza', 'Arquibancada', 11);
 
 // Create guest list
-const lista = [guestOne, guestTwo, guestThree, guestFour, guestFive, guestSix];
+const guestsList = [
+  guestOne,
+  guestTwo,
+  guestThree,
+  guestFour,
+  guestFive,
+  guestSix,
+];
 
 // Function to check if a guest is older than 18 years old and add to new list
 const isOlder = (list, processedList) => {
-  list.map((guest) => {
+  guestsList.map((guest) => {
     if (guest.idade >= 18) {
       processedList.push({ ...guest, openBar: true });
     } else {
@@ -31,13 +38,27 @@ const isOlder = (list, processedList) => {
 };
 
 // Function to return processed list
-const liberarBebidas = (lista) => {
-  const listaProcessada = [];
+const releaseDrinks = (list) => {
+  const processedList = [];
 
-  isOlder(lista, listaProcessada);
+  isOlder(list, processedList);
 
-  return listaProcessada;
+  return processedList;
 };
 
-const listaComBebidasProcessadas = liberarBebidas(lista);
-console.log(listaComBebidasProcessadas);
+const processedDrinksList = releaseDrinks(guestsList);
+
+// Function to separate guests by sector
+const separateBySector = (list, sector) => {
+  return list.filter((guest) => guest.setor === sector);
+};
+
+// Lists by sector
+const vipArea = separateBySector(processedDrinksList, 'Camarote');
+const partyFloor = separateBySector(processedDrinksList, 'Pista');
+const grandstand = separateBySector(processedDrinksList, 'Arquibancada');
+
+// Verify in console.log if filters are working
+console.log('Lista de Camarote: ', vipArea);
+console.log('Lista de Pista: ', partyFloor);
+console.log('Lista de Arquibancada: ', grandstand);
