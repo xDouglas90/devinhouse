@@ -58,7 +58,29 @@ const vipArea = separateBySector(processedDrinksList, 'Camarote');
 const partyFloor = separateBySector(processedDrinksList, 'Pista');
 const grandstand = separateBySector(processedDrinksList, 'Arquibancada');
 
-// Verify in console.log if filters are working
-console.log('Lista de Camarote: ', vipArea);
-console.log('Lista de Pista: ', partyFloor);
-console.log('Lista de Arquibancada: ', grandstand);
+// Function to create li element
+const createItemElement = (content) => {
+  const li = document.createElement('li');
+  li.textContent = content;
+
+  return li;
+};
+
+// Add lists to DOM
+const addToDOM = (list, parent) => {
+  list.forEach((guest) => {
+    const li = createItemElement(`${guest.nome} ${guest.sobrenome}`);
+    parent.appendChild(li);
+  });
+};
+
+// Render lists
+window.onload = () => {
+  const vipList = document.getElementById('listaCamarote');
+  const partyFloorList = document.getElementById('listaPista');
+  const grandstandList = document.getElementById('listaArquibancada');
+
+  addToDOM(vipArea, vipList);
+  addToDOM(partyFloor, partyFloorList);
+  addToDOM(grandstand, grandstandList);
+};
