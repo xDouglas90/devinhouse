@@ -39,3 +39,5 @@ const guestSix = {
   setor: 'Arquibancada',
   idade: 11,
 };
+
+const lista = [guestOne, guestTwo, guestThree, guestFour, guestFive, guestSix];
