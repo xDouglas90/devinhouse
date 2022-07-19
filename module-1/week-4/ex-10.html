@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação do ano</title>
+
+    <!-- Bootstrap 5 CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1>Estação do ano</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center justify-content-center">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="date">Data</label>
+                            <input type="date" class="form-control mb-3" id="date" name="date"
+                                placeholder="Informe uma idade">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Verificar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-column align-items-center justify-content-center result">
+                    <strong class="fs-4 mt-5 result__message"></strong>
+                    <figure class="figure w-50 d-none">
+                        <img src="" class="figure-img img-fluid rounded" alt="Imagem da estação do ano">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const imagesForSeasons = {
+            sad: 'https://i.kym-cdn.com/entries/icons/mobile/000/026/489/crying.jpg',
+            summer: 'https://www.akcpetinsurance.com/res/akc/blog/2022/keep-your-cat-cool-this-summer/cat-summer-header.jpg',
+            winter: 'https://www.boredpanda.com/blog/wp-content/uploads/2016/11/I-Photograph-My-Cats-In-Front-Of-The-Window-Whenever-Its-Raining-58260ebdb2306__880.jpg',
+            spring: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2022%2F03%2F10%2Fthese-cats-are-ready-for-spring-1209881870-2000.jpg',
+            fall: 'https://images2.alphacoders.com/752/752611.jpg'
+        }
+
+        const form = document.querySelector('form');
+        const figure = document.querySelector('.figure');
+        const img = document.querySelector('.figure-img');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const date = document.querySelector('#date').value;
+            const message = document.querySelector('.result__message');
+            let result = '';
+
+            if (date === '') {
+                message.textContent = 'Digite uma data.';
+                figure.classList.remove('d-none');
+                img.src = imagesForSeasons.sad;
+                return;
+            }
+
+            result = season(date);
+
+            message.textContent = result;
+        });
+
+        // função para verificar estação do ano no hemisfério sul
+        function season(date) {
+            const month = date.split('-')[1];
+            const day = date.split('-')[2];
+
+            if (month === '01' || month === '02' || (month === '12' && day >= '22') || (month === '03' && day <= '21')) {
+                figure.classList.remove('d-none');
+                img.src = imagesForSeasons.summer;
+                return 'Verão';
+            } else if ((month === '03' && day >= '22') || month === '04' || month === '05' || (month === '06' && day <= '21')) {
+                figure.classList.remove('d-none');
+                img.src = imagesForSeasons.fall;
+                return 'Outono';
+            } else if ((month === '06' && day > '21') || month === '07' || month === '08' || (month === '09' && day <= '21')) {
+                figure.classList.remove('d-none');
+                img.src = imagesForSeasons.winter;
+                return 'Inverno';
+            } else {
+                figure.classList.remove('d-none');
+                img.src = imagesForSeasons.spring;
+                return 'Primavera';
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
