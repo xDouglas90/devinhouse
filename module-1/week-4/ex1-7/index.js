@@ -4,16 +4,19 @@ const accounts = [
     id: 1,
     name: 'Douglas Oliveira',
     balance: 3550,
+    password: '11111111',
   },
   {
     id: 2,
     name: 'Ana Cristina',
     balance: 2100,
+    password: '22222222',
   },
   {
     id: 3,
     name: 'Júlia Maria',
     balance: 1000,
+    password: '33333333',
   },
 ];
 
@@ -66,7 +69,7 @@ const withdraw = (account, amount) => {
   successContainer.classList.remove('d-none');
   successMsg.textContent = `Saque realizado com sucesso.`;
   account.balance -= amount;
-  return accounts[account] = account;
+  return (accounts[account] = account);
 };
 
 // Function to deposit money
@@ -80,7 +83,7 @@ const deposit = (account, amount) => {
   successContainer.classList.remove('d-none');
   successMsg.textContent = `Depósito realizado com sucesso.`;
   account.balance += amount;
-  return accounts[account] = account;
+  return (accounts[account] = account);
 };
 
 // Function to perform operation
@@ -99,6 +102,21 @@ const operation = (type, account, amount) => {
 // Get operation form
 const operationForm = document.querySelector('.op-form');
 
+// Valdidations
+const validatePassword = (account, input) => {
+  const error = document.querySelector('.form-text');
+
+  if (input !== account.password || input === '') {    
+    error.textContent = 'Senha inválida. Por favor, tente novamente.';
+    error.style = 'color: red; display: block;';
+    return false;
+  }
+
+  error.textContent = 'Senha válida.';
+  error.style = 'color: green; display: block;';
+  return true;
+};
+
 // Operation form submit event
 operationForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -107,6 +125,7 @@ operationForm.addEventListener('submit', (e) => {
   const accountSelected = document.querySelector('.op-account').value;
   const informedAmount = document.querySelector('.op-amount').value;
   const operationType = document.querySelector('.op-type');
+  const password = document.querySelector('.op-pswd').value;
 
   // Verify if operation type is selected
   if (operationType.value === '0') {
@@ -137,6 +156,11 @@ operationForm.addEventListener('submit', (e) => {
     return;
   }
 
+  // Verify if password is informed
+  if (!validatePassword(account, password)) {
+    return;
+  }
+
   // Convert informed values to number
   const type = Number(operationType.value);
   const amount = Number(informedAmount);
@@ -147,7 +171,7 @@ operationForm.addEventListener('submit', (e) => {
   // Hide fail message and display result section
   failContainer.classList.add('d-none');
   resultSection.classList.remove('d-none');
-  
+
   // Populate result section fields
   accField.textContent = account.name;
   typeField.textContent = operationType.options[type].textContent;
