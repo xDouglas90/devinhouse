@@ -39,7 +39,8 @@ window.onload = populateSelect(accounts);
 
 // ============================== OPERATIONS ==================================
 //Result section elements
-const successMsg = document.querySelector('.op-result__success-msg'),
+const resultSection = document.querySelector('.op-result'),
+  successMsg = document.querySelector('.op-result__success-msg'),
   successContainer = document.querySelector('.op-result__success'),
   failContainer = document.querySelector('.op-result__fail'),
   failMsg = document.querySelector('.op-result__fail-msg'),
@@ -64,9 +65,11 @@ const withdraw = (account, amount) => {
 
   successContainer.classList.remove('d-none');
   successMsg.textContent = `Saque realizado com sucesso.`;
-  return (account.balance -= amount);
+  account.balance -= amount;
+  return accounts[account] = account;
 };
 
+// Function to deposit money
 const deposit = (account, amount) => {
   if (amount <= 0) {
     failContainer.classList.remove('d-none');
@@ -76,7 +79,8 @@ const deposit = (account, amount) => {
 
   successContainer.classList.remove('d-none');
   successMsg.textContent = `Depósito realizado com sucesso.`;
-  return (account.balance += amount);
+  account.balance += amount;
+  return accounts[account] = account;
 };
 
 // Function to perform operation
@@ -104,10 +108,35 @@ operationForm.addEventListener('submit', (e) => {
   const informedAmount = document.querySelector('.op-amount').value;
   const operationType = document.querySelector('.op-type');
 
+  // Verify if operation type is selected
+  if (operationType.value === '0') {
+    resultSection.classList.remove('d-none');
+    failContainer.classList.remove('d-none');
+    failMsg.textContent = 'Por favor, selecione um tipo de operação.';
+    return;
+  }
+
+  // Verify if amount is informed
+  if (informedAmount === '') {
+    resultSection.classList.remove('d-none');
+    failContainer.classList.remove('d-none');
+    failMsg.textContent = 'Por favor, informe um valor.';
+    return;
+  }
+
   // Get account by id
   const account = accounts.find(
     (account) => account.id === Number(accountSelected)
   );
+
+  // Verify if account is selected
+  if (!account) {
+    resultSection.classList.remove('d-none');
+    failContainer.classList.remove('d-none');
+    failMsg.textContent = 'Conta inválida. Por favor, tente novamente.';
+    return;
+  }
+
   // Convert informed values to number
   const type = Number(operationType.value);
   const amount = Number(informedAmount);
@@ -115,10 +144,10 @@ operationForm.addEventListener('submit', (e) => {
   // Perform operation
   operation(type, account, amount);
 
-  // Display result section
-  const resultSection = document.querySelector('.op-result');
+  // Hide fail message and display result section
+  failContainer.classList.add('d-none');
   resultSection.classList.remove('d-none');
-
+  
   // Populate result section fields
   accField.textContent = account.name;
   typeField.textContent = operationType.options[type].textContent;
@@ -128,5 +157,3 @@ operationForm.addEventListener('submit', (e) => {
   // Clear input fields
   operationForm.reset();
 });
-
-console.log(accounts);
