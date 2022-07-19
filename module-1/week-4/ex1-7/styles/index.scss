@@ -1,0 +1,27 @@
+// Functions first
+@import "../node_modules/bootstrap/scss/functions";
+
+// Vars
+$primary-color: #00a8ff;
+
+// Variable overrides first
+$primary: $primary-color;
+$enable-shadows: true;
+$prefix: "mo-";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Styles
+body {
+    // anti-aliasing
+    -webkit-font-smoothing: antialiased;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    .topbar {
+
+        &__logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}

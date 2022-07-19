@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,105 @@
     <link rel="stylesheet" href="./styles/index.css">
     <script src="index.js" defer></script>
 </head>
+
 <body>
-    
+    <header class="header bg-primary pt-3 mb-5">
+        <section class="container topbar">
+            <div class="row">
+                <div class="col-8">
+                    <div class="topbar__logo">
+                        <h1 class="mb-0 text-white">DEVBank</h1>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <nav class="navbar navbar-expand-lg bg-primary">
+                        <div class="container-fluid">
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                              <li class="nav-item">
+                                <a class="nav-link text-white fs-4" aria-current="page" href="#">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link text-white fs-4" href="#operation">Operação</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main class="main">
+        <section class="banner">
+            <div class="container banner__content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-column align-items-center justify-content-center mb-5">
+                            <h2 class="fs-1">Bem-vindo ao DEVBank</h2>
+                            <strong class="fs-4">O banco que você precisa para desenvolver</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="operation mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <strong class="fs-5 mb-3">
+                            Operação bancária
+                        </strong>
+                        <form class="op-form mb-4">
+                            <div class="mb-3 op-form__group">
+                                <label class="form-label" for="op-account">Selecionar conta:</label>
+                                <select name="op-account" class="form-select op-account"
+                                    aria-label="Selecionar o tipo de conta">
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 op-form__group">
+                                <label class="form-label" for="op-amount">Valor:</label>
+                                <input type="number" name="op-amount" class="form-control op-amount" min="0"
+                                    step="0.01">
+                            </div>
+
+                            <div class="mb-3 op-form__group">
+                                <label class="form-label" for="op-type">Tipo:</label>
+                                <select name="op-type" class="form-select op-type"
+                                    aria-label="Selecionar o tipo de operação">
+                                    <option value="0">Depositar</option>
+                                    <option value="1">Sacar</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 op-form__group">
+                                <button type="submit" name="op-confirm" class="btn btn-primary text-white">Confirmar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer bg-dark pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-white">&copy; DEVBank</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
