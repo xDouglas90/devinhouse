@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Ímpar</title>
+
+    <!-- Bootstrap 5 CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center justify-content-center">
+                    <h1>Par ou Ímpar</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex align-items-center justify-content-center">
+                    <form class="form">
+                        <div class="form-group">
+                            <label for="number">Número</label>
+                            <input type="number" class="form-control mb-3" id="number" name="number" placeholder="Digite um número">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Verificar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center justify-content-center result">
+                    <strong class="fs-4 mt-5 result__message"></strong>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const number = document.querySelector('#number').value;
+            const message = document.querySelector('.result__message');
+
+            if (number === '') {
+                message.textContent = 'Digite um número';
+                return;
+            }
+            
+            const result = (number % 2 == 0) ? 'Par ✌' : 'Ímpar ☝';                
+            
+            message.textContent = result;
+        });
+    </script>
+</body>
+
+</html>
