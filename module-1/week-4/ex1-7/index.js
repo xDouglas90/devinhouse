@@ -67,8 +67,24 @@ const withdraw = (account, amount) => {
   return (account.balance -= amount);
 };
 
+const deposit = (account, amount) => {
+  if (amount <= 0) {
+    failContainer.classList.remove('d-none');
+    failMsg.textContent = 'Valor inválido. Por favor, tente novamente.';
+    return;
+  }
+
+  successContainer.classList.remove('d-none');
+  successMsg.textContent = `Depósito realizado com sucesso.`;
+  return (account.balance += amount);
+};
+
 // Function to perform operation
 const operation = (type, account, amount) => {
+  if (type === 1) {
+    return deposit(account, amount);
+  }
+
   if (type === 2) {
     return withdraw(account, amount);
   }
@@ -112,3 +128,5 @@ operationForm.addEventListener('submit', (e) => {
   // Clear input fields
   operationForm.reset();
 });
+
+console.log(accounts);

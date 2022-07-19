@@ -47,4 +47,20 @@ body {
             }
         }
     }
+
+    .op-result {
+        &__success-msg, &__fail-msg {
+            border-radius: 5px;
+            color: white;
+            padding: 1rem;
+        }
+
+        &__success-msg {
+            background: #0ce655;
+        }
+
+        &__fail-msg {
+            background: #ff3c00;
+        }
+    }
 }
