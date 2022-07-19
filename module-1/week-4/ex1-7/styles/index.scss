@@ -17,11 +17,34 @@ body {
     -webkit-font-smoothing: antialiased;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
-    .topbar {
+    .banner {
+        background: url('../assets/banner.jpg') no-repeat center center;
+        background-size: cover;
+        height: 0;
+        padding-top: 39%;
+        position: relative;
 
-        &__logo {
-            font-size: 2rem;
-            font-weight: bold;
+        @media (min-width: 1200px) {
+            background-position-y: -164px;
+            padding-top: 32%;
+        }
+
+        &__content {
+            position: absolute;
+            top: 5%;
+            right: 1.5%;
+
+            @media (min-width: 768px) {
+                right: 3.5%;
+            }
+
+            @media (min-width: 1200px) {
+                right: 2.5%;
+            }
+
+            @media (min-width: 1600px) {
+                right: 15.5%;
+            }
         }
     }
 }
