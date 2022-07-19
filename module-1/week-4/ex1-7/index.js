@@ -65,9 +65,11 @@ const withdraw = (account, amount) => {
 
   successContainer.classList.remove('d-none');
   successMsg.textContent = `Saque realizado com sucesso.`;
-  return (account.balance -= amount);
+  account.balance -= amount;
+  return accounts[account] = account;
 };
 
+// Function to deposit money
 const deposit = (account, amount) => {
   if (amount <= 0) {
     failContainer.classList.remove('d-none');
@@ -77,7 +79,8 @@ const deposit = (account, amount) => {
 
   successContainer.classList.remove('d-none');
   successMsg.textContent = `Depósito realizado com sucesso.`;
-  return (account.balance += amount);
+  account.balance += amount;
+  return accounts[account] = account;
 };
 
 // Function to perform operation
